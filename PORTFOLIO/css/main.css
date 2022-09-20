@@ -1,0 +1,439 @@
+@charset "utf-8";
+@import url('//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+body{
+    font-family: 'Iropke Batang' , sans-serif;
+    color: #333;
+}
+.fp-watermark{
+    display: none;
+}
+header{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 50%; top: 20px;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+header .inner{
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+header .inner .gnb{
+    margin-bottom: 20px;
+}
+header .inner .gnb ul{
+    display: flex;
+}
+header .inner .gnb ul li a{
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    color: #333;
+    font-size: 18px;
+    padding: 0 25px;
+    /* font-weight: bold; */
+    position: relative;
+}
+header .inner .gnb ul li:hover a{
+    /* font-weight: bold; */
+    color: #6D9074;
+}
+header .inner .gnb ul li a::before{
+    content: '/';
+    position: absolute;
+    left: 0; top: 0;
+   color: #6C847D;
+}
+header .inner .gnb ul li:first-child a::before{
+    display: none;
+}
+/* ---------네비바------- */
+#right_nav{
+    position: fixed;
+    right: 100px; top: 50%;
+    transform: translateY(-50%);
+    width: 190px;
+    z-index: 999;
+    text-align: right;
+}
+#right_nav li{
+    width: 190px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+#right_nav li a{
+    color: #6D9074;
+    font-size: 17px;
+}
+#right_nav li.active a{
+    color: #152D25;
+    font-weight: bold;
+}
+/* -------첫번째화면-------- */
+#fullpage .home{
+    background: url(../images/main.jpg)no-repeat center top;
+    background-size: cover;
+    background-position: 0 -230px;
+    position: relative;
+}
+#fullpage .home h2{
+    position: absolute;
+    left: 38%;;
+    top: 50%;
+    transform: translateY(-50%)
+}
+#fullpage .home .txt{
+    position: absolute;
+    left: 60%; top: 50%;
+    transform: translateY(-50%);
+    color: #E6EFEE;
+    font-size: 17px;
+    line-height: 25px;
+    opacity: 0;
+    transition: all 2s ease;
+}
+#fullpage .home.active .txt{
+    opacity: 1;
+    left: 50%;
+    transition: all 2s ease;
+}
+#fullpage .home .txt::after{
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: #E6EFEE;
+    position: absolute;
+    left: 0;top: -10px;
+}
+#fullpage .home span{
+    position: absolute;
+    left: 60%; top: 50%;
+    transform: translateY(-50%);
+    color: #E6EFEE;
+    font-size: 40px;
+    margin-top: 50px;
+    opacity: 0;
+    transition: all 2s ease 1s;
+}
+#fullpage .home.active span{
+    opacity: 1;
+    left: 50%;
+    transition: all 2s ease 1s;
+}
+/* --------두번째화면------- */
+#fullpage .about{
+    background: #E6EFEE;
+    position: relative;
+}
+#fullpage .about h2{
+    position: absolute;
+    left: 50%; top: 70px;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: #333;
+}
+#fullpage .about .left{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 500px;
+}
+#fullpage .about .my{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    width: 500px;
+}
+#fullpage .about .my li{
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+#fullpage .about .my li:nth-child(2){
+    /* line-height: 0; */
+    margin-right: 0;
+}
+#fullpage .about .my li:last-child{
+    margin-right: 15px;
+}
+#fullpage .about .my li h4{
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+#fullpage .about .my li p{
+    font-size: 16px;
+    line-height: 40px;
+}
+#fullpage .about .my li:nth-child(2n) p{
+    line-height: 24px;
+}
+#fullpage .about .skill{
+    width: 400px;
+    /* background: #333; */
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    border-radius: 10px;
+    position: absolute;
+    right: 25%; top: 50%;
+    transform: translateY(-50%);
+}
+#fullpage .about .skill h4{
+    font-weight: 300;
+    font-size: 24px;
+    text-align:left;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#fullpage .about .skill .sk p{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#fullpage .about .skill .sk p span{
+    font-size: 13px;
+    font-weight: 300;
+}
+#fullpage .about .skill .sk p .tit{
+    font-weight: bold;
+    font-size: 16px;
+}
+#fullpage .about .skill .sk p span:first-child{
+    float: left;
+}
+#fullpage .about .skill .sk p span:last-child{
+    float: right;
+}
+#fullpage .about .skill .prog_box{
+    /* border: 1px solid #86b5ad; */
+    background: #fff;
+    /* padding: 5px; */
+    /* border-radius: 3px; */
+    margin-bottom: 20px;
+}
+#fullpage .about.active .skill  .prog_box div{
+    height: 10px;
+    background: #648C7D;
+    animation: ani 1s ease;
+    animation-fill-mode : forwards;
+    /* border-radius: 3px; */
+    animation-fill-mode: backwards;
+}
+@keyframes ani{
+    0%{
+        width: 0;
+    }
+}
+#fullpage .about.active .skill  .prog_box .prog_lv0{
+    animation-delay: 0;
+}
+#fullpage .about.active .skill  .prog_box .prog_lv1{
+    animation-delay: 0.3s;
+}
+#fullpage .about.active .skill .prog_box .prog_lv2{
+    animation-delay: 0.6s;
+}
+#fullpage .about.active .skill .prog_box .prog_lv3{
+    animation-delay: 0.9s;
+}
+#fullpage .about.active .skill .prog_box .prog_lv3{
+    animation-delay: 1.2s;
+}
+#fullpage .about.active .skill .prog_box .prog_lv4{
+    animation-delay: 1.5s;
+}
+#fullpage .about.active .skill .prog_box .prog_lv5{
+    animation-delay: 1.8s;
+}
+#fullpage .about.active .skill .prog_box .prog_lv6{
+    animation-delay: 2.1s;
+}
+/* ---------세번째화면-------- */
+#fullpage .port{
+    background: #E6EFEE;
+    position: relative;
+    /* border-top: 1px solid #6C847D; */
+}
+#fullpage .port h2{
+    position: absolute;
+    left: 50%; top: 70px;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: #333;
+}
+#fullpage .port .tab{
+    position: absolute;
+    left: 50%; top: 20%;
+    transform: translateX(-50%);
+    display: flex;
+    margin-left: 35px;
+}
+#fullpage .port .tab li{
+    margin-right: 35px;
+}
+#fullpage .port .tab li a{
+    display: block;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    background: #6D9074;
+    text-align: center;
+    line-height: 50px;
+}
+/* #fullpage .port .sd{
+    height: 500px;
+    flex-wrap: wrap;
+    border: 1px solid red;
+} */
+#fullpage .port .slide_j{
+    width: 1000px;
+    margin: 180px auto 0;
+    /* display: flex; */
+}
+#fullpage .port .slide_j .s_list{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    flex-wrap: wrap;
+}
+#fullpage .port .slide_j .s_list li{
+    margin-bottom: 50px;
+    /* float: left; */
+    /* margin-right: 50px; */
+}
+#fullpage .port .slide_j .s_list li:nth-child(3)~li{
+    /* float: right; */
+    margin-bottom: 0;
+}
+#fullpage .port .slide_j .s_list li a{
+    width: 300px;
+    height: 200px;
+}
+#fullpage .port .s_list{
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+#fullpage .port .s_list li{
+    margin-bottom: 50px;
+}
+#fullpage .port .s_list li:nth-child(4){
+    margin-bottom: 0;
+}
+#fullpage .port.s_list li a{
+    width: 300px;
+    height: 200px;
+}
+/* ---------네번째 화면------ */
+#fullpage .cont{
+    background: #D0E5E3;
+    position: relative;
+}
+#fullpage .cont h2{
+    position: absolute;
+    left: 50%; top: 70px;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: #333;
+}
+#fullpage .cont .inner{
+    width: 1000px;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    /* border: 1px solid red; */
+}
+#fullpage .cont .left{
+    width: 500px;
+    height: 600px;
+    position: relative;
+}
+#fullpage .cont .left::before{
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 1px;
+    height: 600px;
+    background: #648C7D;
+    opacity: 0.5;
+}
+#fullpage .cont .call{
+   position: absolute;
+   left: 80px; top: 50%;
+   transform: translateY(-50%);
+}
+#fullpage .cont .call li{
+    width: 350px;
+    height: 40px;
+    color: #6D9074;
+    line-height: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: 40px;
+    font-size: 20px;
+}
+#fullpage .cont .call li:first-child:before{
+    content: '';
+    width: 28px;
+    height: 28px;
+    background: url(../images/call.png)no-repeat;
+    position: absolute;
+    left: -40px; top: 50%;
+    transform: translateY(-50%);
+}
+#fullpage .cont .call li:nth-child(2):before{
+    content: '';
+    width: 28px;
+    height: 28px;
+    background: url(../images/ms.png)no-repeat;
+    position: absolute;
+    left: -40px; top: 50%;
+    transform: translateY(-50%);
+}
+#fullpage .cont .call li:nth-child(3):before{
+    content: '';
+    width: 28px;
+    height: 28px;
+    background: url(../images/loc.png)no-repeat;
+    position: absolute;
+    left: -40px; top: 50%;
+    transform: translateY(-50%);
+}
+#fullpage .cont .call li:last-child{
+    margin-bottom: 0;
+}
+#fullpage .cont .right{
+    width: 500px;
+    height: 600px;
+}
+#fullpage .cont .right .map{
+    margin: 100px auto;
+    width: 400px;
+    height: 400px;
+    background: url(../images/Frame\ 51.jpg)no-repeat;
+}
+/* ---------푸터------ */
+#fullpage .footer{
+    width: 100%;
+    height: 100px;
+    background: #648C7D;
+}
+#fullpage .footer .ft{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
